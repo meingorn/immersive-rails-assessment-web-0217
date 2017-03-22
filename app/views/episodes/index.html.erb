@@ -1,7 +1,17 @@
 <h1>All Episodes</h1>
 
+<%= form_for(@user, url: sessions_path) do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit :Login%>
+<% end %>
+
 <ul>
   <% @episodes.each do |episode| %>
-    <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li>
+    <li><%= link_to "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}" , :action => 'show', :id => episode.id%></li>
   <% end %>
 </ul>

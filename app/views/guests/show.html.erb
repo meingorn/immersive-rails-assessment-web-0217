@@ -1,0 +1,13 @@
+<h1><%= @guest.name %></h1>
+<h1><%= @guest.occupation %></h1>
+<h1>Create New Appearance for guest</h1>
+
+ <%#<%=form_for @guest, url: {action: "update"} do |f|%>    %>
+    <%= f.text_field() %>
+    <%= f.check_box_tag(:rating) %>
+    <%= label_tag(:rating, 1) %>
+    <%= f.submit %>
+  <% end %>
+
+<h1>select show</h1>
+<h1>select rating</h1>
